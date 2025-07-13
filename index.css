@@ -1,0 +1,181 @@
+/* Global styles for StoryArt */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Smooth transitions for interactive elements */
+button, input, textarea, select {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Focus styles for accessibility */
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #8b5cf6;
+  outline-offset: 2px;
+}
+
+/* Custom drag and drop styles */
+.drag-over {
+  background-color: rgba(139, 92, 246, 0.1);
+  border: 2px dashed #8b5cf6;
+}
+
+/* Animation for loading states */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Custom modal backdrop */
+.modal-backdrop {
+  backdrop-filter: blur(4px);
+}
+
+/* Prevent text selection on UI elements */
+.no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Canvas element positioning */
+.canvas-element {
+  position: absolute;
+  cursor: move;
+  user-select: none;
+}
+
+.canvas-element:hover {
+  outline: 2px solid rgba(139, 92, 246, 0.5);
+}
+
+.canvas-element.selected {
+  outline: 2px solid #8b5cf6;
+}
+
+/* Resize handles for canvas elements */
+.resize-handle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #8b5cf6;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+
+.resize-handle.nw { top: -4px; left: -4px; cursor: nw-resize; }
+.resize-handle.ne { top: -4px; right: -4px; cursor: ne-resize; }
+.resize-handle.sw { bottom: -4px; left: -4px; cursor: sw-resize; }
+.resize-handle.se { bottom: -4px; right: -4px; cursor: se-resize; }
+
+/* Speech bubble styles */
+.speech-bubble {
+  position: relative;
+  background: white;
+  border-radius: 8px;
+  padding: 12px;
+  color: black;
+}
+
+.speech-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 20px;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-top-color: white;
+}
+
+.thought-bubble {
+  position: relative;
+  background: white;
+  border-radius: 20px;
+  padding: 12px;
+  color: black;
+}
+
+.thought-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 20px;
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+}
+
+.thought-bubble::before {
+  content: '';
+  position: absolute;
+  bottom: -25px;
+  left: 15px;
+  width: 5px;
+  height: 5px;
+  background: white;
+  border-radius: 50%;
+}
+
+.shout-bubble {
+  position: relative;
+  background: #ffeb3b;
+  border: 3px solid #f57f17;
+  border-radius: 4px;
+  padding: 12px;
+  color: black;
+  font-weight: bold;
+}
+
+.shout-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 20px;
+  width: 0;
+  height: 0;
+  border: 12px solid transparent;
+  border-top-color: #f57f17;
+}
